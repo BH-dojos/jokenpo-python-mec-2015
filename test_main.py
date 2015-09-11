@@ -30,6 +30,26 @@ class TestDojo(unittest.TestCase):
         rodada = Rodada("Papel", "Tesoura")
         self.assertEqual("Tesoura", rodada.vencedor())
 
+    def test_pedra_empata_com_pedra(self):
+        rodada = Rodada("Pedra", "Pedra")
+        self.assertEqual(None, rodada.vencedor())
+
+    def test_papel_empata_com_papel(self):
+        rodada = Rodada("Papel", "Papel")
+        self.assertEqual(None, rodada.vencedor())
+
+    def test_tesoura_empata_com_tesoura(self):
+        rodada = Rodada("Tesoura", "Tesoura")
+        self.assertEqual(None, rodada.vencedor())
+
+    def test_empatou_pedra_com_pedra(self):
+        rodada = Rodada("Pedra", "Pedra")
+        self.assertTrue(rodada.empatou())
+
+    def test_naoempatou_tesoura_com_pedra(self):
+        rodada = Rodada("Tesoura", "Pedra")
+        self.assertFalse(rodada.empatou())
+
 
 if __name__ == '__main__':
     unittest.main()

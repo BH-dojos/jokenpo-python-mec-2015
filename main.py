@@ -4,19 +4,26 @@ class Rodada:
 		self.jogador1 = jogador1
 		self.jogador2 = jogador2
 
+	def empatou(self):
+		return self.jogador1 == self.jogador2
+
 	def vencedor (self):
+
 		dicionario = {
 			"Pedra":{
 				"Tesoura" : "Pedra",
-				"Papel" : "Papel"
+				"Papel" : "Papel",
+				"Pedra": None
 			},
 			"Tesoura": {
 				"Pedra": "Pedra",
-				"Papel": "Tesoura"
+				"Papel": "Tesoura",
+				"Tesoura": None
 			},
 			"Papel": {
 				"Pedra": "Papel",
-				"Tesoura": "Tesoura"
+				"Tesoura": "Tesoura",
+				"Papel": None
 			}
 		}
 
